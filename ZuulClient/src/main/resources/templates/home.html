@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Welcome  <span th:text="${user}"></span>!!! with Authorities <span th:text="${role}"></span></h1>
+<a th:href="@{/}">Back</a><br>
+<a th:href="@{/authorize}">Authorize</a><br>
+<a th:href="@{/utilities}">Utility</a><br>
+<a th:href="@{/logoutUser}">Logout</a><br>
+<table>
+<tr th:each="utility: ${utilities}">
+    <td th:text="${utility.utilityId}" />
+    <td th:text="${utility.utilityName}" />
+</tr>
+</table>
+
+</body>
+</html>
